@@ -246,51 +246,52 @@ function App() {
               <div className="text-5xl">🍎🐧</div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-800">macOS & Linux</h3>
-                <p className="text-gray-600">Build from source</p>
+                <p className="text-gray-600">Automated installation</p>
               </div>
             </div>
+            
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+              <p className="text-sm text-yellow-800">
+                <strong>⚠️ Penting:</strong> Memerlukan Python 3.10, 3.11, atau 3.12 (bukan 3.13 atau lebih tinggi karena kompatibilitas PyInstaller).
+              </p>
+            </div>
+
             <p className="text-gray-600 mb-4">
-              Untuk pengguna macOS dan Linux, Anda perlu membangun aplikasi dari source code:
+              Gunakan script instalasi otomatis yang menangani semuanya untuk Anda:
             </p>
             
-            {/* Run from Source */}
+            {/* Automated Installation */}
             <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-800 mb-3">Jalankan dari Source</h4>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Instalasi Otomatis</h4>
               <div className="bg-gray-900 text-gray-100 rounded-lg p-6 font-mono text-sm overflow-x-auto">
                 <div className="text-green-400"># Clone repository</div>
                 <div>git clone https://github.com/fikrisyahid/adzanid.git</div>
                 <div>cd adzanid</div>
-                <div className="mt-4 text-green-400"># Buat virtual environment</div>
-                <div>python3 -m venv venv</div>
-                <div>source venv/bin/activate</div>
-                <div className="mt-4 text-green-400"># Install dependencies</div>
-                <div>pip install -r requirements.txt</div>
-                <div className="mt-4 text-green-400"># Jalankan aplikasi</div>
-                <div>python main.py</div>
+                <div className="mt-4 text-green-400"># Buat script executable</div>
+                <div>chmod +x install.sh</div>
+                <div className="mt-4 text-green-400"># Jalankan instalasi dengan sudo</div>
+                <div>sudo ./install.sh</div>
               </div>
             </div>
 
-            {/* Build Your Own Executable */}
-            <div className="mb-4">
-              <h4 className="text-lg font-semibold text-gray-800 mb-3">Build Executable Sendiri</h4>
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-3">
-                <p className="text-sm text-yellow-800">
-                  <strong>⚠️ Penting:</strong> Gunakan Python {'<'} 3.13 untuk menghindari masalah kompatibilitas PyInstaller.
-                </p>
-              </div>
-              <div className="bg-gray-900 text-gray-100 rounded-lg p-6 font-mono text-sm overflow-x-auto mb-3">
-                <div>pip install pyinstaller</div>
-                <div className="mt-2">pyinstaller --name "Adzanid" --windowed \</div>
-                <div className="pl-4">--icon=assets/icon.png \</div>
-                <div className="pl-4">--add-data "assets:assets" \</div>
-                <div className="pl-4">main.py</div>
-              </div>
-              <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
-                <p className="text-sm text-blue-800">
-                  <strong>📝 Catatan:</strong> Setelah build selesai, copy folder <code className="bg-blue-100 px-2 py-1 rounded">assets</code> ke dalam directory <code className="bg-blue-100 px-2 py-1 rounded">dist/Adzanid</code>.
-                </p>
-              </div>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+              <p className="text-sm text-blue-800 mb-2">
+                <strong>📦 Yang dilakukan script:</strong>
+              </p>
+              <ul className="text-sm text-blue-900 space-y-1 ml-4 list-disc">
+                <li>Validasi instalasi Python dan versi</li>
+                <li>Membuat virtual environment</li>
+                <li>Install semua dependencies</li>
+                <li>Build aplikasi dengan PyInstaller</li>
+                <li>Copy assets ke lokasi yang tepat</li>
+                <li>Install ke system directory (<code className="bg-blue-100 px-1 rounded">/opt/adzanid</code> atau <code className="bg-blue-100 px-1 rounded">/Applications</code>)</li>
+                <li>Membuat shortcut command-line: <code className="bg-blue-100 px-1 rounded">adzanid</code></li>
+              </ul>
             </div>
+
+            <p className="text-gray-600 mb-4">
+              Setelah instalasi, cari Adzanid di application menu Anda atau jalankan <code className="bg-gray-100 px-2 py-1 rounded">adzanid</code> di terminal.
+            </p>
 
             <a 
               href="https://github.com/fikrisyahid/adzanid#installation" 
@@ -298,7 +299,7 @@ function App() {
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-gray-800 text-white rounded-lg font-semibold hover:bg-gray-900 transition"
             >
-              📖 Lihat Petunjuk Lengkap
+              📖 Lihat Petunjuk Lengkap & Instalasi Manual
             </a>
           </div>
         </div>
