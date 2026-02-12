@@ -16,6 +16,7 @@ function App() {
           </div>
           <nav className="hidden md:flex gap-8">
             <a href="#features" className="text-gray-600 hover:text-teal-600 transition">Features</a>
+            <a href="#screenshots" className="text-gray-600 hover:text-teal-600 transition">Screenshots</a>
             <a href="#download" className="text-gray-600 hover:text-teal-600 transition">Download</a>
             <a href="https://github.com/fikrisyahid/adzanid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition">GitHub</a>
           </nav>
@@ -49,10 +50,16 @@ function App() {
               Download for Windows
             </a>
             <a 
+              href="#screenshots" 
+              className="px-8 py-4 bg-white text-teal-600 border-2 border-teal-600 rounded-xl font-semibold hover:bg-teal-50 transition transform hover:scale-105 shadow-lg"
+            >
+              View Gallery
+            </a>
+            <a 
               href="https://github.com/fikrisyahid/adzanid" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white text-teal-600 border-2 border-teal-600 rounded-xl font-semibold hover:bg-teal-50 transition transform hover:scale-105 shadow-lg"
+              className="px-8 py-4 bg-white text-gray-700 border-2 border-gray-300 rounded-xl font-semibold hover:bg-gray-50 transition transform hover:scale-105 shadow-lg"
             >
               View on GitHub
             </a>
@@ -112,6 +119,91 @@ function App() {
               title="Custom Audio"
               description="Gunakan file MP3 adzan favorit Anda sendiri"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Screenshots Section */}
+      <section id="screenshots" className="py-16 px-6 bg-linear-to-b from-gray-50 to-white">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
+            Tampilan Aplikasi
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Lihat antarmuka Adzanid yang bersih dan modern dengan dukungan tema terang dan gelap
+          </p>
+          
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Schedule Screenshots */}
+              <div className="space-y-3">
+                <h3 className="text-lg font-bold text-gray-800 text-center mb-3">📅 Jadwal Sholat</h3>
+                <div className="space-y-3">
+                  <div className="space-y-1">
+                    <img 
+                      src="/schedule_white.png" 
+                      alt="Jadwal Sholat - Light Mode" 
+                      className="w-full rounded-lg shadow-lg border border-gray-200 hover:scale-105 transition-transform duration-300"
+                    />
+                    <p className="text-center text-gray-500 text-xs">☀️ Light Mode</p>
+                  </div>
+                  <div className="space-y-1">
+                    <img 
+                      src="/schedule_black.png" 
+                      alt="Jadwal Sholat - Dark Mode" 
+                      className="w-full rounded-lg shadow-lg border border-gray-700 hover:scale-105 transition-transform duration-300"
+                    />
+                    <p className="text-center text-gray-500 text-xs">🌙 Dark Mode</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Settings Screenshots */}
+              <div className="space-y-3">
+                <h3 className="text-lg font-bold text-gray-800 text-center mb-3">⚙️ Pengaturan</h3>
+                <div className="space-y-3">
+                  <div className="space-y-1">
+                    <img 
+                      src="/setting_white.png" 
+                      alt="Pengaturan - Light Mode" 
+                      className="w-full rounded-lg shadow-lg border border-gray-200 hover:scale-105 transition-transform duration-300"
+                    />
+                    <p className="text-center text-gray-500 text-xs">☀️ Light Mode</p>
+                  </div>
+                  <div className="space-y-1">
+                    <img 
+                      src="/setting_black.png" 
+                      alt="Pengaturan - Dark Mode" 
+                      className="w-full rounded-lg shadow-lg border border-gray-700 hover:scale-105 transition-transform duration-300"
+                    />
+                    <p className="text-center text-gray-500 text-xs">🌙 Dark Mode</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* About Screenshots */}
+              <div className="space-y-3">
+                <h3 className="text-lg font-bold text-gray-800 text-center mb-3">ℹ️ Tentang</h3>
+                <div className="space-y-3">
+                  <div className="space-y-1">
+                    <img 
+                      src="/about_white.png" 
+                      alt="Tentang - Light Mode" 
+                      className="w-full rounded-lg shadow-lg border border-gray-200 hover:scale-105 transition-transform duration-300"
+                    />
+                    <p className="text-center text-gray-500 text-xs">☀️ Light Mode</p>
+                  </div>
+                  <div className="space-y-1">
+                    <img 
+                      src="/about_black.png" 
+                      alt="Tentang - Dark Mode" 
+                      className="w-full rounded-lg shadow-lg border border-gray-700 hover:scale-105 transition-transform duration-300"
+                    />
+                    <p className="text-center text-gray-500 text-xs">🌙 Dark Mode</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
