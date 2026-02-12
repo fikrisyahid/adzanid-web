@@ -2,7 +2,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-emerald-50">
+    <div className="min-h-screen bg-linear-to-br from-teal-50 via-white to-emerald-50">
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -149,7 +149,7 @@ function App() {
           </div>
 
           {/* macOS & Linux */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl shadow-xl p-8 border-2 border-gray-200">
+          <div className="bg-linear-to-r from-gray-50 to-gray-100 rounded-2xl shadow-xl p-8 border-2 border-gray-200">
             <div className="flex items-center gap-4 mb-6">
               <div className="text-5xl">🍎🐧</div>
               <div>
@@ -160,18 +160,46 @@ function App() {
             <p className="text-gray-600 mb-4">
               Untuk pengguna macOS dan Linux, Anda perlu membangun aplikasi dari source code:
             </p>
-            <div className="bg-gray-900 text-gray-100 rounded-lg p-6 font-mono text-sm overflow-x-auto mb-4">
-              <div className="text-green-400"># Clone repository</div>
-              <div>git clone https://github.com/fikrisyahid/adzanid.git</div>
-              <div>cd adzanid</div>
-              <div className="mt-4 text-green-400"># Buat virtual environment</div>
-              <div>python3 -m venv venv</div>
-              <div>source venv/bin/activate</div>
-              <div className="mt-4 text-green-400"># Install dependencies</div>
-              <div>pip install -r requirements.txt</div>
-              <div className="mt-4 text-green-400"># Jalankan aplikasi</div>
-              <div>python main.py</div>
+            
+            {/* Run from Source */}
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Jalankan dari Source</h4>
+              <div className="bg-gray-900 text-gray-100 rounded-lg p-6 font-mono text-sm overflow-x-auto">
+                <div className="text-green-400"># Clone repository</div>
+                <div>git clone https://github.com/fikrisyahid/adzanid.git</div>
+                <div>cd adzanid</div>
+                <div className="mt-4 text-green-400"># Buat virtual environment</div>
+                <div>python3 -m venv venv</div>
+                <div>source venv/bin/activate</div>
+                <div className="mt-4 text-green-400"># Install dependencies</div>
+                <div>pip install -r requirements.txt</div>
+                <div className="mt-4 text-green-400"># Jalankan aplikasi</div>
+                <div>python main.py</div>
+              </div>
             </div>
+
+            {/* Build Your Own Executable */}
+            <div className="mb-4">
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Build Executable Sendiri</h4>
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-3">
+                <p className="text-sm text-yellow-800">
+                  <strong>⚠️ Penting:</strong> Gunakan Python {'<'} 3.13 untuk menghindari masalah kompatibilitas PyInstaller.
+                </p>
+              </div>
+              <div className="bg-gray-900 text-gray-100 rounded-lg p-6 font-mono text-sm overflow-x-auto mb-3">
+                <div>pip install pyinstaller</div>
+                <div className="mt-2">pyinstaller --name "Adzanid" --windowed \</div>
+                <div className="pl-4">--icon=assets/icon.png \</div>
+                <div className="pl-4">--add-data "assets:assets" \</div>
+                <div className="pl-4">main.py</div>
+              </div>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
+                <p className="text-sm text-blue-800">
+                  <strong>📝 Catatan:</strong> Setelah build selesai, copy folder <code className="bg-blue-100 px-2 py-1 rounded">assets</code> ke dalam directory <code className="bg-blue-100 px-2 py-1 rounded">dist/Adzanid</code>.
+                </p>
+              </div>
+            </div>
+
             <a 
               href="https://github.com/fikrisyahid/adzanid#installation" 
               target="_blank" 
