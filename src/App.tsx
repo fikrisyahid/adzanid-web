@@ -136,11 +136,11 @@ function App() {
               Download executable versi Windows. Langsung ekstrak dan jalankan file <code className="bg-gray-100 px-2 py-1 rounded">Adzanid.exe</code>
             </p>
             <a 
-              href="https://github.com/fikrisyahid/adzanid/releases/download/v1.0.0/Adzanid-Windows-v1.0.0.zip" 
+              href="https://github.com/fikrisyahid/adzanid/releases/download/v1.1.0/Adzanid-Windows-v1.1.0.zip" 
               className="inline-block px-8 py-4 bg-teal-600 text-white rounded-xl font-semibold hover:bg-teal-700 transition transform hover:scale-105 shadow-lg"
               download
             >
-              📥 Download Adzanid v1.0.0 for Windows
+              📥 Download Adzanid v1.1.0 for Windows
             </a>
             <p className="text-sm text-gray-500 mt-4">
               ⚠️ <strong>Windows SmartScreen Warning:</strong> Anda mungkin melihat peringatan keamanan. 
