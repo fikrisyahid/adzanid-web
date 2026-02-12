@@ -18,6 +18,7 @@ function App() {
             <a href="#features" className="text-gray-600 hover:text-teal-600 transition">Features</a>
             <a href="#screenshots" className="text-gray-600 hover:text-teal-600 transition">Screenshots</a>
             <a href="#download" className="text-gray-600 hover:text-teal-600 transition">Download</a>
+            <a href="#uninstall" className="text-gray-600 hover:text-teal-600 transition">Uninstall</a>
             <a href="https://github.com/fikrisyahid/adzanid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition">GitHub</a>
           </nav>
         </div>
@@ -331,6 +332,100 @@ function App() {
             >
               📖 Lihat Petunjuk Lengkap & Instalasi Manual
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Uninstallation Section */}
+      <section id="uninstall" className="py-20 px-6 bg-gray-50">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12">
+            Uninstall Aplikasi
+          </h2>
+          
+          {/* Windows Uninstall */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border-2 border-red-100">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="text-5xl">🪟</div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800">Windows</h3>
+                <p className="text-gray-600">Simple folder deletion</p>
+              </div>
+            </div>
+            <p className="text-gray-600 mb-4">
+              Untuk menghapus Adzanid dari Windows, cukup hapus folder <code className="bg-gray-100 px-2 py-1 rounded">Adzanid</code> yang telah Anda ekstrak.
+            </p>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
+              <p className="text-sm text-blue-800">
+                <strong>ℹ️ Info:</strong> Jika Anda mengaktifkan "Run at Startup", aplikasi akan secara otomatis menghapus entry startup ketika Anda menutupnya.
+              </p>
+            </div>
+          </div>
+
+          {/* macOS & Linux Uninstall */}
+          <div className="bg-linear-to-r from-gray-50 to-gray-100 rounded-2xl shadow-xl p-8 border-2 border-gray-200">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="text-5xl">🍎🐧</div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800">macOS & Linux</h3>
+                <p className="text-gray-600">Automated uninstallation</p>
+              </div>
+            </div>
+            
+            <p className="text-gray-600 mb-4">
+              Uninstall dengan satu command:
+            </p>
+            
+            {/* Uninstallation Commands */}
+            <div className="mb-6 space-y-4">
+              {/* Using curl */}
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Menggunakan <strong>curl</strong>:</p>
+                <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto">
+                  <div>curl -fsSL https://raw.githubusercontent.com/fikrisyahid/adzanid/main/uninstall.sh | sudo bash</div>
+                </div>
+              </div>
+
+              {/* Using wget */}
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Atau menggunakan <strong>wget</strong>:</p>
+                <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto">
+                  <div>wget -qO- https://raw.githubusercontent.com/fikrisyahid/adzanid/main/uninstall.sh | sudo bash</div>
+                </div>
+              </div>
+
+              {/* From cloned repository */}
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Atau dari repository yang telah di-clone:</p>
+                <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto space-y-1">
+                  <div>cd adzanid</div>
+                  <div>chmod +x uninstall.sh</div>
+                  <div>sudo ./uninstall.sh</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+              <p className="text-sm text-red-800 mb-2">
+                <strong>🗑️ Yang akan dihapus script uninstallation:</strong>
+              </p>
+              <ul className="text-sm text-red-900 space-y-1 ml-4 list-disc">
+                <li>✅ File aplikasi dari <code className="bg-red-100 px-1 rounded">/opt/adzanid</code> (Linux) atau <code className="bg-red-100 px-1 rounded">/Applications/Adzanid.app</code> (macOS)</li>
+                <li>✅ Command-line launcher dari <code className="bg-red-100 px-1 rounded">/usr/local/bin/adzanid</code></li>
+                <li>✅ Desktop entry (khusus Linux)</li>
+                <li>✅ User autostart entries (jika diaktifkan)</li>
+              </ul>
+            </div>
+
+            <div className="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+              <p className="text-sm text-green-800 mb-2">
+                <strong>💾 User settings tetap tersimpan</strong> dan dapat dihapus manual jika diinginkan:
+              </p>
+              <ul className="text-sm text-green-900 space-y-1 ml-4 list-disc">
+                <li><strong>Linux:</strong> <code className="bg-green-100 px-1 rounded">~/.config/Adzanid/</code></li>
+                <li><strong>macOS:</strong> <code className="bg-green-100 px-1 rounded">~/Library/Application Support/Adzanid/</code> dan <code className="bg-green-100 px-1 rounded">~/Library/Preferences/com.fikrisyahid.adzanid.plist</code></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
