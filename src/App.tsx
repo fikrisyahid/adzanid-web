@@ -42,18 +42,42 @@ function App() {
           <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
             Desktop prayer times application for Indonesian cities. Simple, elegant, and always on time.
           </p>
+          
+          {/* Download Buttons */}
+          <div className="mb-8">
+            <p className="text-sm font-semibold text-gray-600 mb-4 uppercase tracking-wide">Download Now</p>
+            <div className="flex gap-4 justify-center flex-wrap max-w-3xl mx-auto">
+              <a 
+                href="#download" 
+                className="flex items-center gap-3 px-8 py-4 bg-teal-600 text-white rounded-xl font-semibold hover:bg-teal-700 transition transform hover:scale-105 shadow-lg"
+              >
+                <span className="text-2xl">🪟</span>
+                <span>Windows</span>
+              </a>
+              <a 
+                href="#download" 
+                className="flex items-center gap-3 px-8 py-4 bg-linear-to-r from-gray-700 to-gray-900 text-white rounded-xl font-semibold hover:from-gray-800 hover:to-black transition transform hover:scale-105 shadow-lg"
+              >
+                <span className="text-2xl">🍎</span>
+                <span>macOS</span>
+              </a>
+              <a 
+                href="#download" 
+                className="flex items-center gap-3 px-8 py-4 bg-linear-to-r from-orange-500 to-red-600 text-white rounded-xl font-semibold hover:from-orange-600 hover:to-red-700 transition transform hover:scale-105 shadow-lg"
+              >
+                <span className="text-2xl">🐧</span>
+                <span>Linux</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
           <div className="flex gap-4 justify-center flex-wrap">
-            <a 
-              href="#download" 
-              className="px-8 py-4 bg-teal-600 text-white rounded-xl font-semibold hover:bg-teal-700 transition transform hover:scale-105 shadow-lg"
-            >
-              Download for Windows
-            </a>
             <a 
               href="#screenshots" 
               className="px-8 py-4 bg-white text-teal-600 border-2 border-teal-600 rounded-xl font-semibold hover:bg-teal-50 transition transform hover:scale-105 shadow-lg"
             >
-              View Gallery
+              📸 View Gallery
             </a>
             <a 
               href="https://github.com/fikrisyahid/adzanid" 
@@ -61,7 +85,7 @@ function App() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-white text-gray-700 border-2 border-gray-300 rounded-xl font-semibold hover:bg-gray-50 transition transform hover:scale-105 shadow-lg"
             >
-              View on GitHub
+              ⭐ View on GitHub
             </a>
           </div>
         </div>
@@ -257,35 +281,41 @@ function App() {
             </div>
 
             <p className="text-gray-600 mb-4">
-              Gunakan script instalasi otomatis yang menangani semuanya untuk Anda:
+              Install dengan satu command:
             </p>
             
-            {/* Automated Installation */}
-            <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-800 mb-3">Instalasi Otomatis</h4>
-              <div className="bg-gray-900 text-gray-100 rounded-lg p-6 font-mono text-sm overflow-x-auto">
-                <div className="text-green-400"># Clone repository</div>
-                <div>git clone https://github.com/fikrisyahid/adzanid.git</div>
-                <div>cd adzanid</div>
-                <div className="mt-4 text-green-400"># Buat script executable</div>
-                <div>chmod +x install.sh</div>
-                <div className="mt-4 text-green-400"># Jalankan instalasi dengan sudo</div>
-                <div>sudo ./install.sh</div>
+            {/* Quick Installation */}
+            <div className="mb-6 space-y-4">
+              <h4 className="text-lg font-semibold text-gray-800">Instalasi Cepat</h4>
+              
+              {/* Using curl */}
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Menggunakan <strong>curl</strong>:</p>
+                <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto">
+                  <div>curl -fsSL https://raw.githubusercontent.com/fikrisyahid/adzanid/main/quick-install.sh | sudo bash</div>
+                </div>
+              </div>
+
+              {/* Using wget */}
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Atau menggunakan <strong>wget</strong>:</p>
+                <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto">
+                  <div>wget -qO- https://raw.githubusercontent.com/fikrisyahid/adzanid/main/quick-install.sh | sudo bash</div>
+                </div>
               </div>
             </div>
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
               <p className="text-sm text-blue-800 mb-2">
-                <strong>📦 Yang dilakukan script:</strong>
+                <strong>📦 Yang dilakukan script instalasi:</strong>
               </p>
               <ul className="text-sm text-blue-900 space-y-1 ml-4 list-disc">
-                <li>Validasi instalasi Python dan versi</li>
-                <li>Membuat virtual environment</li>
-                <li>Install semua dependencies</li>
-                <li>Build aplikasi dengan PyInstaller</li>
-                <li>Copy assets ke lokasi yang tepat</li>
-                <li>Install ke system directory (<code className="bg-blue-100 px-1 rounded">/opt/adzanid</code> atau <code className="bg-blue-100 px-1 rounded">/Applications</code>)</li>
-                <li>Membuat shortcut command-line: <code className="bg-blue-100 px-1 rounded">adzanid</code></li>
+                <li>✅ Validasi instalasi Python dan versi</li>
+                <li>✅ Install system dependencies otomatis (python3-venv)</li>
+                <li>✅ Build aplikasi dengan semua dependencies</li>
+                <li>✅ Install ke system directory (<code className="bg-blue-100 px-1 rounded">/opt/adzanid</code> untuk Linux atau <code className="bg-blue-100 px-1 rounded">/Applications/Adzanid.app</code> untuk macOS)</li>
+                <li>✅ Membuat command-line shortcut: <code className="bg-blue-100 px-1 rounded">adzanid</code></li>
+                <li>✅ Cleanup temporary files setelah instalasi</li>
               </ul>
             </div>
 
