@@ -293,7 +293,7 @@ function App() {
               <div>
                 <p className="text-sm text-gray-600 mb-2">Menggunakan <strong>curl</strong>:</p>
                 <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto">
-                  <div>curl -fsSL https://raw.githubusercontent.com/fikrisyahid/adzanid/main/quick-install.sh | sudo bash</div>
+                  <div>curl -fsSL https://raw.githubusercontent.com/fikrisyahid/adzanid/main/quick-install.sh | sudo -E bash</div>
                 </div>
               </div>
 
@@ -301,8 +301,14 @@ function App() {
               <div>
                 <p className="text-sm text-gray-600 mb-2">Atau menggunakan <strong>wget</strong>:</p>
                 <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto">
-                  <div>wget -qO- https://raw.githubusercontent.com/fikrisyahid/adzanid/main/quick-install.sh | sudo bash</div>
+                  <div>wget -qO- https://raw.githubusercontent.com/fikrisyahid/adzanid/main/quick-install.sh | sudo -E bash</div>
                 </div>
+              </div>
+              
+              <div className="bg-teal-50 border-l-4 border-teal-400 p-4">
+                <p className="text-sm text-teal-800">
+                  <strong>💡 Tip:</strong> Jika Anda menggunakan conda atau virtual environment, flag <code className="bg-teal-100 px-1 rounded">-E</code> <strong>diperlukan</strong> untuk preserve Python environment Anda. Tanpa flag ini, script mungkin tidak mendeteksi instalasi Python 3.12 Anda.
+                </p>
               </div>
             </div>
 
@@ -403,6 +409,12 @@ function App() {
                   <div>sudo ./uninstall.sh</div>
                 </div>
               </div>
+            </div>
+
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+              <p className="text-sm text-blue-800">
+                <strong>ℹ️ Note:</strong> Flag <code className="bg-blue-100 px-1 rounded">--yes</code> secara otomatis mengkonfirmasi uninstallation ketika piping dari curl/wget. Ketika menjalankan script secara langsung, Anda akan diminta konfirmasi secara interaktif.
+              </p>
             </div>
 
             <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
