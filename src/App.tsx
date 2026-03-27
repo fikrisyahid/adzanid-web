@@ -361,11 +361,6 @@ function App() {
             <p className="text-gray-600 mb-4">
               Untuk menghapus Adzanid dari Windows, cukup hapus folder <code className="bg-gray-100 px-2 py-1 rounded">Adzanid</code> yang telah Anda ekstrak.
             </p>
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
-              <p className="text-sm text-blue-800">
-                <strong>ℹ️ Info:</strong> Jika Anda mengaktifkan "Run at Startup", aplikasi akan secara otomatis menghapus entry startup ketika Anda menutupnya.
-              </p>
-            </div>
           </div>
 
           {/* macOS & Linux Uninstall */}
@@ -409,12 +404,6 @@ function App() {
                   <div>sudo ./uninstall.sh</div>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
-              <p className="text-sm text-blue-800">
-                <strong>ℹ️ Note:</strong> Flag <code className="bg-blue-100 px-1 rounded">--yes</code> secara otomatis mengkonfirmasi uninstallation ketika piping dari curl/wget. Ketika menjalankan script secara langsung, Anda akan diminta konfirmasi secara interaktif.
-              </p>
             </div>
 
             <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
